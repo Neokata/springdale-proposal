@@ -5,6 +5,10 @@ import {
   Utensils,
   Sparkles,
   ArrowRight,
+  Film,
+  Newspaper,
+  ExternalLink,
+  Camera,
 } from "lucide-react";
 
 const stats = [
@@ -12,6 +16,43 @@ const stats = [
   { label: "States represented", value: "19" },
   { label: "Local economic impact", value: "$750K" },
   { label: "2026 projection", value: "$1M+" },
+];
+
+const photos = [
+  "https://cdn.shopify.com/s/files/1/0617/5090/2952/files/AZ3A2152.jpg?v=1759291697&width=800",
+  "https://cdn.shopify.com/s/files/1/0617/5090/2952/files/AZ3A1955.jpg?v=1759291697&width=800",
+  "https://cdn.shopify.com/s/files/1/0617/5090/2952/files/AZ3A1734.jpg?v=1759291697&width=800",
+];
+
+const aftermovies = [
+  {
+    year: "2025",
+    id: "Np3sk6odXOo",
+    title: "TougeCon 2025 Aftermovie",
+  },
+  {
+    year: "2024",
+    id: "iKmdQehWpJA",
+    title: "TougeCon 2024 Aftermovie",
+  },
+  {
+    year: "2023",
+    id: "Wzd25skwZPs",
+    title: "TougeCon 2023 Aftermovie",
+  },
+];
+
+const press = [
+  {
+    title: "The Drive",
+    subtitle: "'This Grassroots JDM Car Show Made Northwest Arkansas Feel Like Tokyo'",
+    url: "https://www.thedrive.com/news/this-grassroots-drift-culture-car-show-made-northwest-arkansas-feel-like-tokyo",
+  },
+  {
+    title: "Experience Fayetteville",
+    subtitle: "Featured event: TougeCon Japanese Car Festival",
+    url: "https://www.experiencefayetteville.com/experience/touge-con-japanese-car-festival",
+  },
 ];
 
 const activations = [
@@ -118,6 +159,76 @@ export default function SpringdaleProposalPage() {
             Source: TougeCon 2025 event recap and Fayetteville economic impact
             estimate. Full report and 2026 model available on request.
           </p>
+        </section>
+
+        {/* Photo gallery */}
+        <section className="mt-12">
+          <h2 className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-slate-500">
+            <Camera className="h-4 w-4" />
+            The Event in Photos
+          </h2>
+          <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-3">
+            {photos.map((src, i) => (
+              <div key={i} className="overflow-hidden rounded-lg border border-slate-200">
+                <img
+                  src={src}
+                  alt={`TougeCon event photo ${i + 1}`}
+                  className="h-48 w-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Aftermovies */}
+        <section className="mt-12">
+          <h2 className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-slate-500">
+            <Film className="h-4 w-4" />
+            Aftermovies
+          </h2>
+          <div className="mt-4 space-y-4">
+            {aftermovies.map((video) => (
+              <a
+                key={video.year}
+                href={`https://www.youtube.com/watch?v=${video.id}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-between rounded-lg border border-slate-200 bg-slate-50 p-4 transition-colors hover:border-[#b91c1c] hover:bg-slate-100"
+              >
+                <div>
+                  <p className="font-bold">{video.title}</p>
+                  <p className="text-sm text-slate-500">Watch on YouTube</p>
+                </div>
+                <ExternalLink className="h-5 w-5 text-slate-400" />
+              </a>
+            ))}
+          </div>
+        </section>
+
+        {/* Press */}
+        <section className="mt-12">
+          <h2 className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-slate-500">
+            <Newspaper className="h-4 w-4" />
+            Press Coverage
+          </h2>
+          <div className="mt-4 space-y-4">
+            {press.map((item) => (
+              <a
+                key={item.title}
+                href={item.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-start justify-between gap-4 rounded-lg border border-slate-200 p-4 transition-colors hover:border-[#b91c1c]"
+              >
+                <div>
+                  <p className="font-bold">{item.title}</p>
+                  <p className="text-sm text-slate-600">{item.subtitle}</p>
+                </div>
+                <ExternalLink className="mt-1 h-4 w-4 shrink-0 text-slate-400" />
+              </a>
+            ))}
+          </div>
         </section>
 
         <section className="mt-12">
