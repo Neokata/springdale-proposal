@@ -19,9 +19,9 @@ const stats = [
 ];
 
 const photos = [
+  "https://res.cloudinary.com/djucof8mn/image/upload/v1782003754/received_828660012845891_dsmsei.jpg",
   "https://cdn.shopify.com/s/files/1/0617/5090/2952/files/AZ3A2152.jpg?v=1759291697&width=800",
   "https://cdn.shopify.com/s/files/1/0617/5090/2952/files/AZ3A1955.jpg?v=1759291697&width=800",
-  "https://cdn.shopify.com/s/files/1/0617/5090/2952/files/AZ3A1734.jpg?v=1759291697&width=800",
 ];
 
 const aftermovies = [
