@@ -59,7 +59,7 @@ const activations = [
   {
     icon: MapPin,
     title: "Luther George Park",
-    desc: "Family-friendly green-space program: live DJ stage, breakdance showcase, vendor rows, food trucks, and spectator seating.",
+    desc: "Family-friendly green-space program: live DJ stage, breakdancing battles, vendor rows, food trucks, and spectator seating.",
   },
   {
     icon: Car,
@@ -69,7 +69,7 @@ const activations = [
   {
     icon: Music,
     title: "Music + Dance",
-    desc: "Live DJ and breakdancing at family-appropriate levels, with room for local youth talent and dance crews.",
+    desc: "DJ Afrosia headlining the stage, with official breakdancing battles produced in partnership with Classic Flow — bringing competitors from out of state and local youth crews together.",
   },
   {
     icon: Utensils,
@@ -112,9 +112,10 @@ export default function SpringdaleProposalPage() {
             We want to partner with Downtown Springdale to bring a proven,
             high-energy automotive + culture activation to Luther George Park and
             the adjacent Tyson Foods lot. The event combines a curated car meet,
-            live DJ and breakdancing, local vendors, and food trucks — designed
-            to drive foot traffic to downtown businesses and put Springdale on
-            the map for a new, travel-ready audience.
+            DJ Afrosia, official breakdancing battles with Classic Flow, local
+            vendors, and food trucks — designed to drive foot traffic to downtown
+            businesses and put Springdale on the map for a new, travel-ready
+            audience.
           </p>
           <ul className="mt-3 list-disc space-y-1 pl-6 text-slate-700">
             <li>Use of Luther George Park for programmed activation</li>
