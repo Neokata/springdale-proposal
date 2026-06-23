@@ -9,14 +9,6 @@ import {
   ExternalLink,
 } from "lucide-react";
 
-// Proof points — single source of truth on scale. The 7,500+ "one night"
-// stat lives on the Last Year's Footprint card below.
-const stats = [
-  { label: "Cars Showcased", value: "600+" },
-  { label: "States Represented", value: "19" },
-  { label: "Local Economic Impact", value: "$750K" },
-];
-
 // Named photos so each one lives in exactly one place on the page.
 const photo = {
   drone: {
@@ -212,34 +204,7 @@ export default function SpringdaleProposalPage() {
           </p>
         </section>
 
-        {/* 2. 2025 Track Record — three dark stat tiles from the full 2025
-            weekend. The subtitle below makes clear these are last year's
-            results, not a forecast for the Springdale Friday night. */}
-        <section className="mt-10">
-          <h2 className="eyebrow text-slate-400">
-            2025 Track Record
-          </h2>
-          <p className="mt-2 max-w-2xl text-sm leading-relaxed text-slate-400">
-            Last year's full-weekend results. The Friday night is its own scope.
-          </p>
-          <div className="mt-3 grid grid-cols-3 gap-3">
-            {stats.map((stat) => (
-              <div
-                key={stat.label}
-                className={`rounded-2xl ${cardBg} p-4 text-center ${cardRing} ${cardShadow}`}
-              >
-                <p className="text-2xl font-black tabular-nums text-[#f87171] sm:text-3xl">
-                  {stat.value}
-                </p>
-                <p className="mt-1 text-xs font-medium text-slate-400">
-                  {stat.label}
-                </p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* 3. Last Year's Footprint — the proof hero. Full-bleed aerial with
+        {/* 2. Last Year's Footprint — the proof hero. Full-bleed aerial with
             a left-side scrim and the 7,500+ stat as the page's central
             evidence. This is the visual that earns the rest of the proposal. */}
         <section className="mt-10">
@@ -270,7 +235,7 @@ export default function SpringdaleProposalPage() {
           </p>
         </section>
 
-        {/* 4. On Stage — breakdancing + DJ proof that backs up the "Live Stage
+        {/* 3. On Stage — breakdancing + DJ proof that backs up the "Live Stage
             Programming" card in the activation plan below. Two equal photos
             side by side at md+, stacked on mobile. */}
         <section className="mt-10">
@@ -287,7 +252,7 @@ export default function SpringdaleProposalPage() {
           </p>
         </section>
 
-        {/* 5. The Activation Plan — four cards. The "Live Stage" card in this
+        {/* 4. The Activation Plan — four cards. The "Live Stage" card in this
             grid is the item the On Stage photos above are proof for. */}
         <section className="mt-10">
           <h2 className="eyebrow text-slate-400">
@@ -311,7 +276,7 @@ export default function SpringdaleProposalPage() {
           </div>
         </section>
 
-        {/* 6. What Springdale Gets — the one red panel. Stays loud on purpose:
+        {/* 5. What Springdale Gets — the one red panel. Stays loud on purpose:
             this is the "what's in it for the city" payoff. */}
         <section className="mt-10 rounded-2xl bg-[#b91c1c] p-5 text-white shadow-[0_18px_40px_-20px_rgba(185,28,28,0.55)] ring-1 ring-red-900/30 md:p-6">
           <h2 className="eyebrow text-red-100">
@@ -327,7 +292,7 @@ export default function SpringdaleProposalPage() {
           </ul>
         </section>
 
-        {/* 7. Why Springdale, Why Now — family photo floated right at md+ so the
+        {/* 6. Why Springdale, Why Now — family photo floated right at md+ so the
             4:3 image fills the column without dominating; paragraph wraps
             around it magazine-style. Below md, the photo stacks full-width
             above the paragraph at its native 4:3 ratio. */}
@@ -357,7 +322,7 @@ export default function SpringdaleProposalPage() {
           </p>
         </section>
 
-        {/* 8. The Ask — the close. Dark card, the red bullets are the only
+        {/* 7. The Ask — the close. Dark card, the red bullets are the only
             spot of brand color here so the eye lands on them. */}
         <section className={`mt-10 clear-both rounded-2xl ${cardBg} p-5 ${cardRing} ${cardShadow} md:p-6`}>
           <h2 className="eyebrow text-slate-400">
@@ -381,7 +346,7 @@ export default function SpringdaleProposalPage() {
           </ul>
         </section>
 
-        {/* 9. See It In the Press — videos + press credibility, one section.
+        {/* 8. See It In the Press — videos + press credibility, one section.
             Two sub-blocks so the proof and the press read as a single
             "outside validation" closing block before contact. */}
         <section className="mt-10">
@@ -444,7 +409,7 @@ export default function SpringdaleProposalPage() {
           </div>
         </section>
 
-        {/* 10. Contact Info — the close. Dark red-tinted panel, only one
+        {/* 9. Contact Info — the close. Dark red-tinted panel, only one
             outside-the-system surface in the page (other than the red
             "What Springdale Gets" panel) so it reads as a deliberate cap. */}
         <section className="mt-10 rounded-2xl bg-[#171013] p-6 text-white shadow-[0_30px_70px_-36px_rgba(20,5,10,0.7)] ring-1 ring-[#b91c1c]/25 md:p-8">
