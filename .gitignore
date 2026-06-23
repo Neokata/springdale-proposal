@@ -26,4 +26,6 @@ yarn-error.log*
 # Vercel
 .vercel
 
-.vercel
+# Local scratch — audit scripts, screenshots, design experiments
+.tmp/
+.shots/

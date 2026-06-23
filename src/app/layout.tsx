@@ -1,10 +1,24 @@
 import type { Metadata } from "next";
+import { Archivo, Hanken_Grotesk } from "next/font/google";
 import "./globals.css";
 
+const archivo = Archivo({
+  subsets: ["latin"],
+  weight: ["600", "700", "800", "900"],
+  variable: "--font-archivo",
+  display: "swap",
+});
+
+const hanken = Hanken_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-hanken-grotesk",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
-  title: "TougeCon in Downtown Springdale | Partnership Proposal",
+  title: "Springdale x TougeCon | Event Proposal",
   description:
-    "A one-page proposal for Downtown Springdale Alliance and the City of Springdale to host a TougeCon activation at Luther George Park and the Tyson Foods lot.",
+    "An event proposal for Downtown Springdale Alliance and the City of Springdale to host a TougeCon Friday-night activation of cars, music, and culture in downtown Springdale.",
 };
 
 export default function RootLayout({
@@ -13,8 +27,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className="bg-white text-slate-900">
+    <html lang="en" className={`${archivo.variable} ${hanken.variable}`}>
+      <body className="bg-slate-50 text-slate-900 font-sans antialiased">
         {children}
       </body>
     </html>
