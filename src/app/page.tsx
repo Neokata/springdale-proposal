@@ -26,7 +26,7 @@ const photo = {
   },
   staging: {
     // Cars lined up post-check-in at a TougeCon staging lot. Used in the
-    // Special Stage section to back up the Arvest Ballpark staging ask.
+    // Special Stage section to back up the parking-lot staging ask.
     src: "https://res.cloudinary.com/djucof8mn/image/upload/v1782316831/ian_toguecon_specialstage_-14_ti0ql6.jpg",
     alt: "Cars lined up at a TougeCon staging lot after check-in",
   },
@@ -177,28 +177,28 @@ export default function SpringdaleProposalPage() {
           </p>
         </section>
 
-        {/* 2. Special Stage — the operational backbone: four staging sessions at
-            Arvest Ballpark across Friday and Saturday. The Friday-night park
-            activation lives in Community Celebration (section 3). */}
+        {/* 2. Special Stage — the operational backbone: four staging sessions
+            across Friday and Saturday at a city-owned parking lot large
+            enough for 175 cars per session. The Friday-night Community
+            Celebration lives in section 3. */}
         <section className="mt-10">
           <div className={`rounded-2xl ${cardBg} p-5 ${cardRing} ${cardShadow} md:p-6`}>
             <h2 className="eyebrow text-slate-400">
               Special Stage
             </h2>
             <p className="mt-2 font-bold text-slate-100">
-              Arvest Ballpark
+              City-owned parking lot
             </p>
             <p className="mt-2 text-base leading-relaxed text-slate-300 md:text-lg">
-              TougeCon showcases the local area and the driving roads that
-              surround it. The weekend runs staff-led cruises on the best
-              roads in the Ozarks — drivers head out in small groups, led by
-              our team.
+              We need a parking lot large enough to stage up to 175 cars per
+              session — checked in, routed into run groups, and sent out
+              with staff leaders. Branded 10x10 / 10x20 tents, A-frame
+              signage, cones.
             </p>
             <p className="mt-2 text-base leading-relaxed text-slate-300 md:text-lg">
-              Four staging sessions across the weekend — Friday and Saturday
-              mornings and afternoons. Up to 175 cars per session, checked in,
-              routed into run groups, and sent out with staff leaders.
-              Branded 10x10 / 10x20 tents, A-frame signage, cones.
+              Four sessions across the weekend — Friday and Saturday
+              mornings and afternoons — running staff-led cruises on the
+              best roads in the Ozarks.
             </p>
             <div className="mt-4 grid grid-cols-2 gap-3">
               <Photo img={photo.checkin} className="h-40 w-full sm:h-52 md:h-60" />
@@ -287,7 +287,7 @@ export default function SpringdaleProposalPage() {
             </h3>
             <ul className="mt-3 space-y-2 text-slate-200">
               {[
-                "Use of Arvest Ballpark parking lot for Friday and Saturday staging",
+                "Use of a city-owned parking lot large enough to stage 175 cars per session",
                 "Use of Luther George Park for programmed activation",
                 "Help securing overflow parking within walking distance of Luther George Park",
                 "Co-marketing support from Downtown Springdale Alliance",

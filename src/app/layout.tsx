@@ -18,7 +18,7 @@ const hanken = Hanken_Grotesk({
 export const metadata: Metadata = {
   title: "Springdale x TougeCon | Event Proposal",
   description:
-    "An event proposal for Downtown Springdale Alliance and the City of Springdale to host a TougeCon weekend of cars, music, and culture — staging at Arvest Ballpark with a Friday-night activation in Luther George Park.",
+    "An event proposal for Downtown Springdale Alliance and the City of Springdale to host a TougeCon weekend of cars, music, and culture — a city-owned lot for Friday and Saturday staging, with a Friday-night activation in Luther George Park.",
 };
 
 export default function RootLayout({

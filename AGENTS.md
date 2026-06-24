@@ -53,7 +53,7 @@ springdale-proposal/
 | # | Section | Notes |
 |---|---|---|
 | 1 | Who We Are | Dark card, two paragraphs: org framing + Springdale turnkey pitch |
-| 2 | Special Stage | Dark card, Arvest Ballpark heading, 4 staging sessions (Fri + Sat morning/afternoon), 175 cars/session, 2-up checkin + lineup photos |
+| 2 | Special Stage | Dark card, "City-owned parking lot" subtext, 4 staging sessions (Fri + Sat morning/afternoon), 175 cars/session, 2-up checkin + lineup photos |
 | 3 | Community Celebration | Dark card, Luther George Park heading, 3,000-attendee Friday-night proposal, 2 activation rows (Live Programming, Vendors & Restaurants), On Stage 2-up photos + caption |
 | 4 | The Partnership | 4a **What Springdale Gets** (one red panel, 4 benefit bullets) + 4b **What TougeCon Requests** (dark card, 5 asks) + 4c family-friendly closer (photo + caption) |
 | 5 | See It In the Press | Three YouTube aftermovies + two press cards |
@@ -65,7 +65,7 @@ add/remove/reorder, renumber the comments to match.
 ## Design constraints
 
 - **Weekend scope, Friday-night spectacle.** The page pitches a full
-  weekend (Special Stage drives at Arvest Ballpark + Friday-night
+  weekend (Special Stage drives out of a city-owned lot + Friday-night
   Community Celebration at Luther George Park) but the *public-facing*
   Friday-night piece is the visual heart of the proposal. Don't quote
   multi-day aggregate numbers (e.g. weekend totals across all sessions)
@@ -159,7 +159,7 @@ never `console.log`.
 ## Session history (recent)
 
 - **HEAD** — Weekend reframe. Page now pitches a full TougeCon weekend
-  (Special Stage at Arvest Ballpark + Friday-night Community Celebration
+  (Special Stage at a city-owned lot + Friday-night Community Celebration
   at Luther George Park) instead of a single-night activation. New
   structure: Who We Are (combined with The Weekend framing), Special
   Stage, Community Celebration, The Partnership (4a + 4b + 4c), Press,

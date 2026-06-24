@@ -11,8 +11,9 @@ Live at: **https://springdale-proposal.vercel.app**
 
 One page (`src/app/page.tsx`), 6 sections, dark-themed. Sells a single
 idea: bring the TougeCon weekend to Springdale in Fall 2026 — Special
-Stage drives staged out of Arvest Ballpark across Friday and Saturday,
-with a Friday-night Community Celebration at Luther George Park.
+Stage drives staged out of a city-owned parking lot across Friday and
+Saturday, with a Friday-night Community Celebration at Luther George
+Park.
 
 The staging schedule is kept at "Friday and Saturday mornings and
 afternoons" so the city can plan around the shape without the page
@@ -21,8 +22,8 @@ over-committing to specific times or dates.
 ## Sections (in order)
 
 1. **Hero** — aerial of 2025 lot, "Springdale × TougeCon" + descriptor
-2. **Special Stage** — Arvest Ballpark staging (4 sessions, up to 175
-   cars each), backed by check-in and lineup photos
+2. **Special Stage** — city-owned parking lot staging (4 sessions, up
+   to 175 cars each), backed by check-in and lineup photos
 3. **Community Celebration** — Luther George Park Friday night
    (`~3,000 attendees` as the working planning number), two activation
    rows (Live Programming, Vendors & Restaurants), On Stage proof photos
