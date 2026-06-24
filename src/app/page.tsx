@@ -200,6 +200,22 @@ export default function SpringdaleProposalPage() {
               mornings and afternoons — running staff-led cruises on the
               best roads in the Ozarks.
             </p>
+            <dl className="mt-4 grid grid-cols-[max-content_1fr] gap-x-4 gap-y-1.5 text-sm">
+              <dt className="text-slate-400">Where</dt>
+              <dd className="text-slate-100">City-owned parking lot, Springdale</dd>
+              <dt className="text-slate-400">When</dt>
+              <dd className="text-slate-100">Friday + Saturday, mornings and afternoons</dd>
+              <dt className="text-slate-400">Scale</dt>
+              <dd className="text-slate-100">4 sessions, up to 175 cars per session</dd>
+              <dt className="text-slate-400">Staffing</dt>
+              <dd className="text-slate-100">TougeCon staff-led</dd>
+              <dt className="text-slate-400">Insurance</dt>
+              <dd className="text-slate-100">Event-insured; additional insured per city request</dd>
+              <dt className="text-slate-400">Coordination</dt>
+              <dd className="text-slate-100">Local law enforcement, pre-event briefing</dd>
+              <dt className="text-slate-400">What we bring</dt>
+              <dd className="text-slate-100">10x10 / 10x20 tents, A-frames, cones</dd>
+            </dl>
             <div className="mt-4 grid grid-cols-2 gap-3">
               <Photo img={photo.checkin} className="h-40 w-full sm:h-52 md:h-60" />
               <Photo img={photo.staging} className="h-40 w-full sm:h-52 md:h-60" />
@@ -224,6 +240,20 @@ export default function SpringdaleProposalPage() {
               capacity, parking, and downtown impact, and the number we'd
               coordinate with the city around.
             </p>
+            <dl className="mt-4 grid grid-cols-[max-content_1fr] gap-x-4 gap-y-1.5 text-sm">
+              <dt className="text-slate-400">Where</dt>
+              <dd className="text-slate-100">Luther George Park + existing lot</dd>
+              <dt className="text-slate-400">When</dt>
+              <dd className="text-slate-100">Friday night</dd>
+              <dt className="text-slate-400">Scale</dt>
+              <dd className="text-slate-100">~3,000 attendees (working planning number)</dd>
+              <dt className="text-slate-400">Programming</dt>
+              <dd className="text-slate-100">Live music + breakdancing battles</dd>
+              <dt className="text-slate-400">What we bring</dt>
+              <dd className="text-slate-100">Vendors, food trucks, spectator seating</dd>
+              <dt className="text-slate-400">Coordination</dt>
+              <dd className="text-slate-100">Park staff, city permits</dd>
+            </dl>
             <div className="mt-5 grid gap-3 sm:grid-cols-3">
               {activations.map((item) => (
                 <div key={item.title}>
