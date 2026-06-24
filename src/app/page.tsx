@@ -1,6 +1,4 @@
 import {
-  MapPin,
-  Car,
   Music,
   Utensils,
   Sparkles,
@@ -8,35 +6,35 @@ import {
   Newspaper,
   ExternalLink,
 } from "lucide-react";
+import { Photo } from "./Photo";
 
 // Named photos so each one lives in exactly one place on the page.
 const photo = {
-  drone: {
-    src: "https://res.cloudinary.com/djucof8mn/image/upload/v1782003664/2025-09-19-TougeCon_Underground_TMoreno-15_gfk3g4.jpg",
-    alt: "Aerial view of the TougeCon 2025 lot, packed with cars",
-  },
   // Hero crop: drop the top quarter (sky) so the cars fill the frame.
   // Original is 4000x2667; this slice is 4000x2000 starting at y=667.
   droneHero: {
     src: "https://res.cloudinary.com/djucof8mn/image/upload/c_fill,g_auto,h_2000,w_4000,y_667/v1782003664/2025-09-19-TougeCon_Underground_TMoreno-15_gfk3g4.jpg",
     alt: "Aerial view of the TougeCon 2025 lot, packed with cars",
   },
-  crowd: {
-    src: "https://res.cloudinary.com/djucof8mn/image/upload/v1782003860/AZ3A1319_dxnerw.jpg",
-    alt: "Crowd around the breakdancing floor",
-  },
   handstand: {
-    src: "https://res.cloudinary.com/djucof8mn/image/upload/v1782003665/AZ3A1557_r0k14k.jpg",
+    src: "https://res.cloudinary.com/djucof8mn/image/upload/v1782316378/copy_of_az3a1557_r0k14k.jpg",
     alt: "Breakdancer doing a handstand on the dance floor",
   },
   family: {
     src: "https://res.cloudinary.com/djucof8mn/image/upload/q_auto/v1782098846/vanceGreen_DSC00890_zs1ggu.jpg",
     alt: "Family-friendly atmosphere at TougeCon",
   },
-  aerial: {
-    // Wide aerial of a packed TougeCon lot, same series as `drone`.
-    src: "https://res.cloudinary.com/djucof8mn/image/upload/q_auto/v1782003754/received_828660012845891_dsmsei.jpg",
-    alt: "Aerial view of a packed TougeCon lot at dusk",
+  staging: {
+    // Cars lined up post-check-in at a TougeCon staging lot. Used in the
+    // Special Stage section to back up the Arvest Ballpark staging ask.
+    src: "https://res.cloudinary.com/djucof8mn/image/upload/v1782316831/ian_toguecon_specialstage_-14_ti0ql6.jpg",
+    alt: "Cars lined up at a TougeCon staging lot after check-in",
+  },
+  checkin: {
+    // Car at the TougeCon check-in tent. Second photo in the Special Stage
+    // section, alongside `staging`.
+    src: "https://res.cloudinary.com/djucof8mn/image/upload/v1782317047/ian_toguecon_specialstage_-1_Large_wxjwic.jpg",
+    alt: "Car checking in at a TougeCon staging tent",
   },
   dj: {
     // DJ on the decks at a TougeCon event, 6000x3368 original.
@@ -66,7 +64,7 @@ const aftermovies = [
 const press = [
   {
     title: "The Drive",
-    subtitle: "'This Grassroots JDM Car Show Made Northwest Arkansas Feel Like Tokyo'",
+    subtitle: "Grassroots JDM, Tokyo vibes",
     url: "https://www.thedrive.com/news/this-grassroots-drift-culture-car-show-made-northwest-arkansas-feel-like-tokyo",
   },
   {
@@ -78,34 +76,22 @@ const press = [
 
 const activations = [
   {
-    icon: MapPin,
-    title: "Luther George Park",
-    desc: "Green-space stage program: live performances, vendors, food trucks, and spectator seating.",
-  },
-  {
-    icon: Car,
-    title: "Tyson Foods Lot",
-    desc: "Curated car meet anchor. JDM, Euro, muscle, and custom builds organized by category with clear traffic flow.",
-  },
-  {
     icon: Music,
-    title: "Live Stage Programming",
-    desc: "Headline DJ plus official breakdancing battles — out-of-state competitors and local crews on the same stage.",
+    title: "Live Programming",
+    desc: "DJ sets plus breakdancing battles produced with Classic Flow — the same format we've run in past years with out-of-state competitors and local crews on the same stage.",
   },
   {
     icon: Utensils,
-    title: "Vendors + Food Trucks",
-    desc: "Local and regional vendors plus a rotating food lineup that keeps people downtown for hours.",
+    title: "Vendors & Restaurants",
+    desc: "A small set of local vendors and food trucks curated by TougeCon, with the surrounding restaurants positioned to capture most of the night's spending.",
   },
 ];
 
 const benefits = [
   "New out-of-town visitors spending downtown",
   "A flagship fall event for the DSA calendar",
-  "Co-branded marketing across TougeCon channels",
-  "Post-event economic impact report",
+  "Logo placement and cross-promotion of Downtown Springdale Alliance across TougeCon channels",
   "Media content and photography for city use",
-  "No cost to the city for production and staffing",
 ];
 
 // Dark surface tokens — three-step elevation scale. /5 is the base card,
@@ -116,51 +102,32 @@ const cardBg = "bg-white/5";
 const cardShadow = "shadow-[0_1px_2px_rgba(0,0,0,0.4)]";
 const hoverLift =
   "transition duration-200 hover:-translate-y-0.5 hover:shadow-[0_12px_28px_-14px_rgba(0,0,0,0.55)] hover:ring-white/20 active:translate-y-0";
-const photoFrame = `h-full w-full overflow-hidden rounded-2xl ${cardRing} shadow-[0_18px_44px_-30px_rgba(0,0,0,0.7)]`;
-
-function Photo({
-  img,
-  className = "",
-  caption,
-}: {
-  img: { src: string; alt: string };
-  className?: string;
-  caption?: string;
-}) {
-  return (
-    <div className={className}>
-      <div className={photoFrame}>
-        <img
-          src={img.src}
-          alt={img.alt}
-          className="block h-full w-full object-cover"
-          loading="lazy"
-        />
-      </div>
-      {caption ? (
-        <p className="mt-2 text-xs text-slate-400">{caption}</p>
-      ) : null}
-    </div>
-  );
-}
 
 export default function SpringdaleProposalPage() {
   return (
     <main className="min-h-screen bg-[#0a0a0a] text-slate-100">
+      <a
+        href="#contact"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:rounded-lg focus:bg-[#b91c1c] focus:px-4 focus:py-2 focus:text-sm focus:font-bold focus:text-white focus:shadow-lg"
+      >
+        Skip to contact info
+      </a>
       <div className="mx-auto max-w-3xl px-5 pt-8 md:px-8 md:pt-12">
         {/* Hero — Option C: centered headline, scrim on both edges */}
         <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(15,23,42,0.45)] ring-1 ring-black/5">
           <img
             src={photo.droneHero.src}
             alt={photo.droneHero.alt}
+            width={4000}
+            height={2000}
             className="h-full w-full object-cover object-center"
           />
           {/* Center-focused radial scrim — keeps the car edges visible while
               darkening behind the text so the headline reads cleanly. */}
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.75)_0%,rgba(0,0,0,0.45)_45%,rgba(0,0,0,0.15)_75%,transparent_100%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.85)_0%,rgba(0,0,0,0.55)_45%,rgba(0,0,0,0.2)_75%,transparent_100%)]" />
           {/* Extra bottom darken so the descriptor line is still legible
               against brighter cars at the bottom of the frame. */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent" />
           <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-5">
             <p
               className="text-xs font-bold uppercase tracking-[0.2em] text-slate-100"
@@ -182,7 +149,7 @@ export default function SpringdaleProposalPage() {
               className="mt-3 max-w-xl text-sm text-white md:text-base"
               style={{ textShadow: "0 1px 10px rgba(0,0,0,0.85), 0 0 4px rgba(0,0,0,0.6)" }}
             >
-              A Friday-night downtown activation of cars, music, and culture.
+              A weekend of cars, music, and culture — based in Springdale.
             </p>
           </div>
         </div>
@@ -199,154 +166,153 @@ export default function SpringdaleProposalPage() {
             mountain-pass driving in the Ozarks — a multi-day event based in
             Northwest Arkansas with a reputation for organized programming,
             quality builds, and a community that travels for the experience
-            and spends locally when they arrive. For Springdale, that means
-            out-of-town visitors downtown on a Friday night.
+            and spends locally when they arrive.
+          </p>
+          <p className="mt-3 text-base leading-relaxed text-slate-100 md:text-lg">
+            For Springdale, we'd bring the audience, production experience, and
+            track record to deliver a flagship fall event in one weekend —
+            offering an established format and co-creating a Springdale
+            version of it, not asking the city to build something from
+            scratch.
           </p>
         </section>
 
-        {/* 2. Last Year's Footprint — the proof hero. Full-bleed aerial with
-            a left-side scrim and the 7,500+ stat as the page's central
-            evidence. This is the visual that earns the rest of the proposal. */}
+        {/* 2. Special Stage — the operational backbone: four staging sessions at
+            Arvest Ballpark across Friday and Saturday. The Friday-night park
+            activation lives in Community Celebration (section 3). */}
         <section className="mt-10">
-          <div className="relative h-64 w-full overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(0,0,0,0.7)] ring-1 ring-white/10 sm:h-80 md:h-96">
-            <img
-              src={photo.aerial.src}
-              alt={photo.aerial.alt}
-              className="h-full w-full object-cover object-center"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/40 to-transparent" />
-            <div className="absolute inset-0 flex flex-col justify-center px-6 sm:px-8 md:px-12 max-w-xl">
-              <p className="eyebrow text-slate-300">
-                Last Year's Footprint
-              </p>
-              <h3 className="mt-3 text-3xl font-black tracking-tight text-white sm:text-4xl md:text-5xl">
-                7,500+ in one night
-              </h3>
-              <p className="mt-3 text-sm text-slate-200 sm:text-base">
-                Cars filling up an entire lot, thousands of people pouring into the
-                venue. This is what a fully-programmed Friday night with TougeCon
-                looks like at scale.
-              </p>
+          <div className={`rounded-2xl ${cardBg} p-5 ${cardRing} ${cardShadow} md:p-6`}>
+            <h2 className="eyebrow text-slate-400">
+              Special Stage
+            </h2>
+            <p className="mt-2 font-bold text-slate-100">
+              Arvest Ballpark
+            </p>
+            <p className="mt-2 text-base leading-relaxed text-slate-300 md:text-lg">
+              TougeCon showcases the local area and the driving roads that
+              surround it. The weekend runs staff-led cruises on the best
+              roads in the Ozarks — drivers head out in small groups, led by
+              our team.
+            </p>
+            <p className="mt-2 text-base leading-relaxed text-slate-300 md:text-lg">
+              Four staging sessions across the weekend — Friday and Saturday
+              mornings and afternoons. Up to 175 cars per session, checked in,
+              routed into run groups, and sent out with staff leaders.
+              Branded 10x10 / 10x20 tents, A-frame signage, cones.
+            </p>
+            <div className="mt-4 grid grid-cols-2 gap-3">
+              <Photo img={photo.checkin} className="h-40 w-full sm:h-52 md:h-60" />
+              <Photo img={photo.staging} className="h-40 w-full sm:h-52 md:h-60" />
             </div>
           </div>
-          <p className="mt-2 px-1 text-xs text-slate-400">
-            Aerial of our 2025 activation at Evelyn Hills shopping mall, working with
-            the property owner.
-          </p>
         </section>
 
-        {/* 3. On Stage — breakdancing + DJ proof that backs up the "Live Stage
-            Programming" card in the activation plan below. Two equal photos
-            side by side at md+, stacked on mobile. */}
+        {/* 3. Community Celebration — the public-facing Friday night at
+            Luther George Park. Pairs with Special Stage (section 2) as the two
+            halves of the weekend. */}
         <section className="mt-10">
-          <h2 className="eyebrow text-slate-400">
-            On Stage
-          </h2>
-          <div className="mt-3 grid grid-cols-2 gap-3">
-            <Photo img={photo.handstand} className="h-48 w-full sm:h-60 md:h-72" />
-            <Photo img={photo.dj} className="h-48 w-full sm:h-60 md:h-72" />
-          </div>
-          <p className="mt-3 text-sm leading-relaxed text-slate-300">
-            Official breakdancing battles produced with Classic Flow, plus headline
-            DJ sets — out-of-state competitors and local crews sharing one stage.
-          </p>
-        </section>
-
-        {/* 4. The Activation Plan — four cards. The "Live Stage" card in this
-            grid is the item the On Stage photos above are proof for. */}
-        <section className="mt-10">
-          <h2 className="eyebrow text-slate-400">
-            The Activation Plan
-          </h2>
-          <div className="mt-3 grid gap-3 sm:grid-cols-2">
-            {activations.map((item) => (
-              <div
-                key={item.title}
-                className={`rounded-2xl ${cardBg} p-5 ${cardRing} ${cardShadow} ${hoverLift}`}
-              >
-                <div className="flex items-center gap-2 text-[#f87171]">
-                  <item.icon className="h-5 w-5" strokeWidth={2.25} />
-                  <h3 className="font-bold text-slate-100">{item.title}</h3>
+          <div className={`rounded-2xl ${cardBg} p-5 ${cardRing} ${cardShadow} md:p-6`}>
+            <h2 className="eyebrow text-slate-400">
+              Community Celebration
+            </h2>
+            <p className="mt-2 font-bold text-slate-100">
+              Luther George Park
+            </p>
+            <p className="mt-2 text-base leading-relaxed text-slate-300 md:text-lg">
+              We're proposing the Friday-night activation for around three
+              thousand attendees — the working number for crowd flow, vendor
+              capacity, parking, and downtown impact, and the number we'd
+              coordinate with the city around.
+            </p>
+            <div className="mt-5 grid gap-3 sm:grid-cols-3">
+              {activations.map((item) => (
+                <div key={item.title}>
+                  <div className="flex items-center gap-2 text-[#f87171]">
+                    <item.icon className="h-5 w-5" strokeWidth={2.25} />
+                    <h3 className="font-bold text-slate-100">{item.title}</h3>
+                  </div>
+                  <p className="mt-2 text-sm leading-relaxed text-slate-300">
+                    {item.desc}
+                  </p>
                 </div>
-                <p className="mt-2 text-sm leading-relaxed text-slate-300">
-                  {item.desc}
-                </p>
+              ))}
+            </div>
+            {/* On Stage — breakdancing + DJ proof that backs up the "Live Stage
+                Programming" activation above. Two equal photos side by side at
+                md+, stacked on mobile. */}
+            <div className="mt-6">
+              <h3 className="eyebrow text-slate-400">
+                On Stage
+              </h3>
+              <div className="mt-3 grid grid-cols-2 gap-3">
+                <Photo img={photo.handstand} className="h-48 w-full sm:h-60 md:h-72" />
+                <Photo img={photo.dj} className="h-48 w-full sm:h-60 md:h-72" />
               </div>
-            ))}
+              <p className="mt-3 text-sm leading-relaxed text-slate-300">
+                Breakdancing battles and headline DJ sets from past TougeCon events — the format we'd bring to Friday night.
+              </p>
+            </div>
           </div>
         </section>
 
-        {/* 5. What Springdale Gets — the one red panel. Stays loud on purpose:
-            this is the "what's in it for the city" payoff. */}
-        <section className="mt-10 rounded-2xl bg-[#b91c1c] p-5 text-white shadow-[0_18px_40px_-20px_rgba(185,28,28,0.55)] ring-1 ring-red-900/30 md:p-6">
-          <h2 className="eyebrow text-red-100">
-            What Springdale Gets
-          </h2>
-          <ul className="mt-3 grid gap-2 sm:grid-cols-2">
-            {benefits.map((item) => (
-              <li key={item} className="flex items-start gap-2 text-sm">
-                <Sparkles className="mt-0.5 h-4 w-4 shrink-0" strokeWidth={2.25} />
-                {item}
-              </li>
-            ))}
-          </ul>
-        </section>
-
-        {/* 6. Why Springdale, Why Now — family photo floated right at md+ so the
-            4:3 image fills the column without dominating; paragraph wraps
-            around it magazine-style. Below md, the photo stacks full-width
-            above the paragraph at its native 4:3 ratio. */}
+        {/* 4. The Partnership — combines "What Springdale Gets" and "What TougeCon Requests"
+            into a single section. Same visual treatments preserved: the
+            red panel still pays off the city's value; the dark card still
+            closes with the asks. The shared eyebrow binds them as one
+            trade. */}
         <section className="mt-10">
           <h2 className="eyebrow text-slate-400">
-            Why Springdale, Why Now
+            The Partnership
           </h2>
-          <figure className="mt-4 w-full md:float-right md:mb-3 md:ml-5 md:mt-3 md:w-[48%]">
-            <div className={`aspect-[4/3] w-full overflow-hidden rounded-2xl ${cardRing} shadow-[0_18px_44px_-30px_rgba(0,0,0,0.7)]`}>
-              <img
-                src={photo.family.src}
-                alt={photo.family.alt}
-                className="block h-full w-full object-cover"
-                loading="lazy"
-              />
-            </div>
-            <figcaption className="mt-2 px-1 text-xs text-slate-400">
-              Family-friendly by design — the next generation of the community
-            </figcaption>
-          </figure>
-          <p className="mt-4 text-base leading-relaxed text-slate-300 md:text-lg md:mt-3">
-            Downtown Springdale Alliance is building a vibrant, connected
-            downtown. TougeCon brings the audience, production experience, and
-            track record to deliver a flagship fall event in one weekend. We are
-            offering to bring an established format and co-create a Springdale
-            version of it — not ask the city to build something from scratch.
-          </p>
+
+          {/* 4a. What Springdale Gets — the one red panel. */}
+          <div className="mt-5 rounded-2xl bg-[#b91c1c] p-5 text-white shadow-[0_18px_40px_-20px_rgba(185,28,28,0.55)] ring-1 ring-red-900/30 md:p-6">
+            <h3 className="eyebrow text-red-100">
+              What Springdale Gets
+            </h3>
+            <ul className="mt-3 grid gap-2 sm:grid-cols-2">
+              {benefits.map((item) => (
+                <li key={item} className="flex items-start gap-2 text-sm">
+                  <Sparkles className="mt-0.5 h-4 w-4 shrink-0" strokeWidth={2.25} />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* 4b. What TougeCon Requests — dark card. */}
+          <div className={`mt-5 rounded-2xl ${cardBg} p-5 ${cardRing} ${cardShadow} md:p-6`}>
+            <h3 className="eyebrow text-slate-400">
+              What TougeCon Requests
+            </h3>
+            <ul className="mt-3 space-y-2 text-slate-200">
+              {[
+                "Use of Arvest Ballpark parking lot for Friday and Saturday staging",
+                "Use of Luther George Park for programmed activation",
+                "Help securing overflow parking within walking distance of Luther George Park",
+                "Co-marketing support from Downtown Springdale Alliance",
+                "Consideration of a presenting sponsorship or in-kind partnership",
+              ].map((item) => (
+                <li key={item} className="flex items-start gap-3">
+                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#f87171]" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* 4c. Family-friendly closer — visual evidence that the activation
+              is built to be multigenerational, not just a car event. */}
+          <div className={`mt-5 rounded-2xl ${cardBg} p-5 ${cardRing} ${cardShadow} md:p-6`}>
+            <Photo
+              img={photo.family}
+              className="w-full"
+              caption="Family-friendly by design — the next generation of the community"
+            />
+          </div>
         </section>
 
-        {/* 7. The Ask — the close. Dark card, the red bullets are the only
-            spot of brand color here so the eye lands on them. */}
-        <section className={`mt-10 clear-both rounded-2xl ${cardBg} p-5 ${cardRing} ${cardShadow} md:p-6`}>
-          <h2 className="eyebrow text-slate-400">
-            The Ask
-          </h2>
-          <p className="mt-3 text-base leading-relaxed text-slate-300 md:text-lg">
-            To move forward, here is what we need from this partnership:
-          </p>
-          <ul className="mt-3 space-y-2 text-slate-200">
-            {[
-              "Use of Luther George Park for programmed activation",
-              "Use of the Tyson Foods parking lot for the car meet",
-              "Co-marketing support from Downtown Springdale Alliance",
-              "Consideration of a presenting sponsorship or in-kind partnership",
-            ].map((item) => (
-              <li key={item} className="flex items-start gap-3">
-                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#f87171]" />
-                {item}
-              </li>
-            ))}
-          </ul>
-        </section>
-
-        {/* 8. See It In the Press — videos + press credibility, one section.
+        {/* 5. See It In the Press — videos + press credibility, one section.
             Two sub-blocks so the proof and the press read as a single
             "outside validation" closing block before contact. */}
         <section className="mt-10">
@@ -359,21 +325,19 @@ export default function SpringdaleProposalPage() {
             <p className="text-xs font-medium uppercase tracking-wider text-slate-400">
               Aftermovies
             </p>
-            <div className="mt-2 space-y-2">
+            <div className="mt-2 space-y-1.5">
               {aftermovies.map((video) => (
                 <a
                   key={video.year}
                   href={`https://www.youtube.com/watch?v=${video.id}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`flex items-center justify-between rounded-2xl ${cardBg} p-4 ${cardRing} ${cardShadow} ${hoverLift}`}
+                  aria-label={`${video.title} (opens YouTube video in new tab)`}
+                  className={`flex items-center justify-between rounded-2xl ${cardBg} px-4 py-2.5 ${cardRing} ${cardShadow} ${hoverLift}`}
                 >
                   <div className="flex items-center gap-3">
                     <Film className="h-5 w-5 text-[#f87171]" strokeWidth={2.25} />
-                    <div>
-                      <p className="font-bold text-slate-100">{video.title}</p>
-                      <p className="text-sm text-slate-400">Watch on YouTube</p>
-                    </div>
+                    <p className="font-bold text-slate-100">{video.title}</p>
                   </div>
                   <ExternalLink className="h-5 w-5 text-[#f87171]" />
                 </a>
@@ -386,17 +350,17 @@ export default function SpringdaleProposalPage() {
             <p className="text-xs font-medium uppercase tracking-wider text-slate-400">
               Press
             </p>
-            <div className="mt-2 space-y-2">
+            <div className="mt-2 space-y-1.5">
               {press.map((item) => (
                 <a
                   key={item.title}
                   href={item.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`flex items-start justify-between gap-4 rounded-2xl ${cardBg} p-4 ${cardRing} ${cardShadow} ${hoverLift}`}
+                  className={`flex items-center justify-between gap-4 rounded-2xl ${cardBg} px-4 py-2.5 ${cardRing} ${cardShadow} ${hoverLift}`}
                 >
-                  <div className="flex items-start gap-3">
-                    <Newspaper className="mt-0.5 h-5 w-5 shrink-0 text-[#f87171]" strokeWidth={2.25} />
+                  <div className="flex items-center gap-3">
+                    <Newspaper className="h-5 w-5 shrink-0 text-[#f87171]" strokeWidth={2.25} />
                     <div>
                       <p className="font-bold text-slate-100">{item.title}</p>
                       <p className="text-sm text-slate-400">{item.subtitle}</p>
@@ -409,25 +373,25 @@ export default function SpringdaleProposalPage() {
           </div>
         </section>
 
-        {/* 9. Contact Info — the close. Dark red-tinted panel, only one
+        {/* 6. Contact Info — the close. Dark red-tinted panel, only one
             outside-the-system surface in the page (other than the red
             "What Springdale Gets" panel) so it reads as a deliberate cap. */}
         <section className="mt-10 rounded-2xl bg-[#171013] p-6 text-white shadow-[0_30px_70px_-36px_rgba(20,5,10,0.7)] ring-1 ring-[#b91c1c]/25 md:p-8">
           <h2 className="text-xl font-bold">Contact Info</h2>
-          <div className="mt-3 space-y-2 text-slate-300">
+          <div className="mt-3 space-y-0 text-slate-300">
             <a
               href="mailto:caleb@tougecon.com"
               className="block text-slate-100 transition hover:text-white"
               style={{ textShadow: "0 0 12px rgba(239,68,68,0.45)" }}
             >
-              caleb@tougecon.com
+              Caleb Yam - caleb@tougecon.com
             </a>
             <a
               href="mailto:noah@tougecon.com"
               className="block text-slate-100 transition hover:text-white"
               style={{ textShadow: "0 0 12px rgba(239,68,68,0.45)" }}
             >
-              noah@tougecon.com
+              Noah Spain - noah@tougecon.com
             </a>
           </div>
         </section>

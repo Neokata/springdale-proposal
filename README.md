@@ -1,36 +1,48 @@
 # springdale-proposal
 
 A single-page partnership proposal site for a **TougeCon × Springdale**
-Friday-night downtown activation. Pitched to the Downtown Springdale
-Alliance (DSA) and Springdale city officials — the artifact a city
-stakeholder opens to decide whether the partnership goes forward.
+weekend activation. Pitched to the Downtown Springdale Alliance (DSA) and
+Springdale city officials — the artifact a city stakeholder opens to
+decide whether the partnership goes forward.
 
 Live at: **https://springdale-proposal.vercel.app**
-Repo: `Neokata/springdale-proposal`
 
 ## What it is
 
-One page (`src/app/page.tsx`), 9 sections, dark-themed. Sells a single
-idea: bring TougeCon's Friday-night programming to downtown Springdale
-for one night in Fall 2026.
+One page (`src/app/page.tsx`), 6 sections, dark-themed. Sells a single
+idea: bring the TougeCon weekend to Springdale in Fall 2026 — Special
+Stage drives staged out of Arvest Ballpark across Friday and Saturday,
+with a Friday-night Community Celebration at Luther George Park.
 
-The page's only scale evidence is the **7,500+ in one night** stat from
-the 2025 Underground event — chosen specifically because that number is
-*Friday-night-shaped*, so the page never quotes weekend-aggregate
-numbers (600+ cars / 19 states / $750K) the city can't hold us to.
+The staging schedule is kept at "Friday and Saturday mornings and
+afternoons" so the city can plan around the shape without the page
+over-committing to specific times or dates.
 
 ## Sections (in order)
 
 1. **Hero** — aerial of 2025 lot, "Springdale × TougeCon" + descriptor
-2. **Last Year's Footprint** — full-bleed aerial with `7,500+ in one night`
-3. **On Stage** — breakdancing + DJ proof photos
-4. **The Activation Plan** — four cards (Park, Lot, Stage, Vendors)
-5. **What Springdale Gets** — the one red panel with six benefits
-6. **Why Springdale, Why Now** — family photo floated right at md+,
-   paragraph wraps magazine-style
-7. **The Ask** — four red bullets
-8. **See It In the Press** — three aftermovies + two press cards
-9. **Contact Info** — dark-red panel with two email addresses
+2. **Special Stage** — Arvest Ballpark staging (4 sessions, up to 175
+   cars each), backed by check-in and lineup photos
+3. **Community Celebration** — Luther George Park Friday night
+   (`~3,000 attendees` as the working planning number), two activation
+   rows (Live Programming, Vendors & Restaurants), On Stage proof photos
+4. **The Partnership** — combined section: 4a "What Springdale Gets"
+   (red panel, what TougeCon offers the city) + 4b "What TougeCon
+   Requests" (dark card, what TougeCon needs) + 4c family-friendly
+   closer
+5. **See It In the Press** — three aftermovies + two press cards
+6. **Contact Info** — dark wine-tinted panel with two email addresses
+
+## Scale evidence policy
+
+The page leads with `~3,000 attendees` framed as a planning number, on
+the theory that the city's first question is "how many should we plan
+for?" rather than "how many have you done this for?" — and the 3,000
+answer is the actionable one.
+
+Track-record language (DJ + breakdancing battles, out-of-state
+competitors and local crews) is kept in past tense to describe prior
+TougeCon events, not as a commitment to the Springdale activation.
 
 ## Stack
 
@@ -62,25 +74,16 @@ single page keeps the diff focused):
   `#b91c1c` (the "What Springdale Gets" red panel)
 - **Contact panel:** `#171013` (deep wine) — only other tinted surface
 
-## Related artifacts
-
-| Role | Location |
-|---|---|
-| Main public site | `1-Website/tougecon-website/` |
-| This proposal (DSA pitch) | `1-Website/springdale-proposal/` ← *you are here* |
-| Admin / ops tooling | `4-Admin/tougecon-admin/` |
-
 ## Working rules
 
 - **Never commit `.tmp/` or `.shots/`** — both are local scratch (audit
   scripts, screenshots, design experiments). Both are gitignored; leave
   the gitignore entry in place.
 - **Don't add new sections without a "why"**. The page is deliberately
-  tight (9 sections, one number). Anything new competes with the 7,500+
-  stat for the reader's attention.
-- **Keep the Friday-night-only frame.** No weekend numbers, no
-  multi-day-promise copy. If a future number is needed, it must be
-  Friday-night-shaped.
+  tight. Anything new competes with the ask for the reader's attention.
+- **Keep the staging schedule non-specific.** "Friday and Saturday
+  mornings and afternoons" only — no specific times or dates until the
+  city confirms.
 - **Build locally before pushing.** `npm run build` must complete with
-  zero errors and the WCAG AA contrast audit (script in `.tmp/`) must
-  report `0/N fail`.
+  zero errors and the WCAG AA contrast audit (`node .tmp/audit-contrast.mjs`)
+  must report `0/N fail`.

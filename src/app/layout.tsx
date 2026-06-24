@@ -18,7 +18,7 @@ const hanken = Hanken_Grotesk({
 export const metadata: Metadata = {
   title: "Springdale x TougeCon | Event Proposal",
   description:
-    "An event proposal for Downtown Springdale Alliance and the City of Springdale to host a TougeCon Friday-night activation of cars, music, and culture in downtown Springdale.",
+    "An event proposal for Downtown Springdale Alliance and the City of Springdale to host a TougeCon weekend of cars, music, and culture — staging at Arvest Ballpark with a Friday-night activation in Luther George Park.",
 };
 
 export default function RootLayout({
@@ -28,7 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${archivo.variable} ${hanken.variable}`}>
-      <body className="bg-slate-50 text-slate-900 font-sans antialiased">
+      <body className="bg-[#0a0a0a] text-slate-100 font-sans antialiased">
         {children}
       </body>
     </html>

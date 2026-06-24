@@ -12,7 +12,7 @@ and Springdale city officials. Static, deployed on Vercel, no runtime
 data. The artifact itself is `src/app/page.tsx` — everything else
 supports it.
 
-> **Date:** 2026-06-23. Repo holds one page, 9 sections, dark-themed.
+> **Date:** 2026-06-24. Repo holds one page, 6 sections, dark-themed.
 > Last validated against `main` at commit `14afb2f`.
 
 ## Architecture
@@ -36,7 +36,8 @@ supports it.
 ```
 springdale-proposal/
 ├── src/app/
-│   ├── page.tsx           ← the entire site (9 sections)
+│   ├── page.tsx           ← the entire site (6 sections)
+│   ├── Photo.tsx          ← client component, photo + click-to-open modal
 │   ├── layout.tsx         ← root layout
 │   └── globals.css        ← Tailwind v4 import + minimal globals
 ├── next.config.ts         ← Next config (security headers, redirects)
@@ -47,39 +48,44 @@ springdale-proposal/
 └── .tmp/                  ← gitignored scratch (audit scripts, screenshots)
 ```
 
-## Page contents — current as of `14afb2f`
+## Page contents — current as of HEAD
 
 | # | Section | Notes |
 |---|---|---|
-| 1 | Hero | Centered headline + scrim; aerial of 2025 lot |
-| 2 | Last Year's Footprint | The **7,500+ in one night** stat — only scale evidence on the page |
-| 3 | On Stage | Two-up photo grid (breakdancing + DJ) |
-| 4 | The Activation Plan | Four cards (Park, Lot, Stage, Vendors) |
-| 5 | What Springdale Gets | The one red panel — six benefit bullets |
-| 6 | Why Springdale, Why Now | Family photo floated right at md+, paragraph wraps magazine-style |
-| 7 | The Ask | Four red-bullet asks (Park, Lot, Co-marketing, Sponsorship) |
-| 8 | See It In the Press | Three YouTube aftermovies + two press cards |
-| 9 | Contact Info | Dark-red panel with two emails |
+| 1 | Who We Are | Dark card, two paragraphs: org framing + Springdale turnkey pitch |
+| 2 | Special Stage | Dark card, Arvest Ballpark heading, 4 staging sessions (Fri + Sat morning/afternoon), 175 cars/session, 2-up checkin + lineup photos |
+| 3 | Community Celebration | Dark card, Luther George Park heading, 3,000-attendee Friday-night proposal, 2 activation rows (Live Programming, Vendors & Restaurants), On Stage 2-up photos + caption |
+| 4 | The Partnership | 4a **What Springdale Gets** (one red panel, 4 benefit bullets) + 4b **What TougeCon Requests** (dark card, 5 asks) + 4c family-friendly closer (photo + caption) |
+| 5 | See It In the Press | Three YouTube aftermovies + two press cards |
+| 6 | Contact Info | Dark wine-tinted panel with two emails |
 
-**Section comments in `page.tsx` are numbered 1–9 in order.** If you
+**Section comments in `page.tsx` are numbered 1–6 in order.** If you
 add/remove/reorder, renumber the comments to match.
 
 ## Design constraints
 
-- **Friday-night-only frame.** The page never quotes weekend-aggregate
-  numbers. No `600+ cars`, no `19 states`, no `$750K impact` — those are
-  multi-day totals and misrepresent the scope we're pitching. The only
-  scale number is the 7,500+ *single-night* stat from the 2025
-  Underground event.
+- **Weekend scope, Friday-night spectacle.** The page pitches a full
+  weekend (Special Stage drives at Arvest Ballpark + Friday-night
+  Community Celebration at Luther George Park) but the *public-facing*
+  Friday-night piece is the visual heart of the proposal. Don't quote
+  multi-day aggregate numbers (e.g. weekend totals across all sessions)
+  where the city would read them as a Friday-night promise. The
+  staging schedule stays at "Friday and Saturday mornings and afternoons"
+  — no specific times or dates until the city confirms.
 - **One red panel, one near-red panel.** "What Springdale Gets" is
   `#b91c1c`. "Contact Info" is `#171013` (deep wine). Everything else
   is dark surface (`bg-white/5` cards on `#0a0a0a` page). Adding a
   third tinted panel breaks the visual rhythm — keep it at two.
 - **Brand red reserved for accent, not body text.** Headline x, stat
   numbers, ask bullets, icon strokes. Body copy stays slate-200/300.
+- **Track record language stays in past tense.** Phrases like "out-of-state
+  competitors and local crews" describe past TougeCon events, not a
+  commitment to the Springdale activation. Use past tense ("the same
+  format we've run") to keep that distinction.
 - **No `next/image`.** Photos are Cloudinary URLs in `<img loading="lazy">`.
   Premature optimization for a static marketing page that needs to be
-  easy to swap images in/out of.
+  easy to swap images in/out of. Photos that should open in a modal use
+  the `Photo` client component (`src/app/Photo.tsx`).
 
 ## Local workflow
 
@@ -107,16 +113,17 @@ vercel ls            # confirm latest is ● Ready in Production
 ## WCAG AA contrast audit
 
 The page is dark-themed, so contrast is the most common regression
-class. There's a Playwright audit script in `.tmp/`:
+class. The audit script in `.tmp/` drives headless Chrome via CDP and
+walks ancestors to find the *effective* background of every text element,
+then applies WCAG 2.x's relative-luminance formula. Tailwind v4 emits
+colors as `oklch(L C H)` and the script handles that conversion.
 
 ```bash
-python .tmp/audit-contrast2.py
+node .tmp/audit-contrast.mjs
 ```
 
-Should report `0/N elements fail WCAG AA contrast`. The script walks
-ancestors to find the *effective* background of every text element and
-applies WCAG 2.x's relative-luminance formula. Recent scores:
-`0/52` (post Track Record removal).
+Should report `0/N elements fail WCAG AA contrast`. Recent scores:
+`0/98` (post-weekend reframe + Partnership rework).
 
 **Hard rule:** no merge with `N > 0`. The only colors that may be below
 AA are inside the hero scrim (where the photo provides context, not a
@@ -151,6 +158,15 @@ never `console.log`.
 
 ## Session history (recent)
 
+- **HEAD** — Weekend reframe. Page now pitches a full TougeCon weekend
+  (Special Stage at Arvest Ballpark + Friday-night Community Celebration
+  at Luther George Park) instead of a single-night activation. New
+  structure: Who We Are (combined with The Weekend framing), Special
+  Stage, Community Celebration, The Partnership (4a + 4b + 4c), Press,
+  Contact. Staging schedule softened to "Friday and Saturday mornings
+  and afternoons" — no specific times or dates. Photo modal added
+  (client component `src/app/Photo.tsx`). Unused photos removed. WCAG
+  AA audit clean: 0/98.
 - **2026-06-23 (`14afb2f`)** — Dropped the "2025 Track Record" section.
   Page now leads straight from "Who We Are" into the 7,500+ footprint.
   Reason: weekend-aggregate numbers (600+ cars, 19 states, $750K) were
