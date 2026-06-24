@@ -379,12 +379,12 @@ export default function SpringdaleProposalPage() {
           </div>
         </section>
 
-        {/* 5. See It In the Press — videos + press credibility, one section.
-            Two sub-blocks so the proof and the press read as a single
-            "outside validation" closing block before contact. */}
+        {/* 5. TougeCon in Action — aftermovies + press credibility, one
+            section. Two sub-blocks so the proof and the press read as a
+            single "outside validation" closing block before contact. */}
         <section className="mt-10">
           <h2 className="eyebrow text-slate-400">
-            See It In the Press
+            TougeCon in Action
           </h2>
 
           {/* Videos */}

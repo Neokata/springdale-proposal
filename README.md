@@ -31,7 +31,7 @@ clock times. Dates are stated as "Oct 2-3, 2026 (dates flexible)."
 4. **The Ask** — one outer dark card containing: 4a "What Springdale Gets"
    (red sub-panel, 6 benefits, single column) + 4b "What TougeCon
    Requests" (5 asks) + 4c family-friendly closer (photo + caption)
-5. **See It In the Press** — three aftermovies + two press cards
+5. **TougeCon in Action** — three aftermovies + two press cards
 6. **Contact Info** — centered, max-w-sm, dark wine-tinted panel with
    two email addresses
 

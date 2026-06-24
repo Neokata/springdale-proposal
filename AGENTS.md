@@ -56,7 +56,7 @@ springdale-proposal/
 | 2 | Curated Drives | Dark card, experience-first intro paragraph (Special Stage sub-event), 2-up checkin + lineup photos, spec table at end (Where / When / Scale / Programming / Our Activation) |
 | 3 | Community Activation | Dark card, expanded intro (logistics + culture + inside/outside park framing), 2 activation rows (Live Programming, Vendors & Food Trucks), lot photo, 2-up breakdancing/DJ photos, spec table at end |
 | 4 | The Ask | One outer dark card containing: 4a **What Springdale Gets** (red sub-panel, 6 benefit bullets, single column) + 4b **What TougeCon Requests** (asks, 5 items) + 4c family-friendly closer (photo + centered caption) |
-| 5 | See It In the Press | Three YouTube aftermovies + two press cards |
+| 5 | TougeCon in Action | Three YouTube aftermovies + two press cards |
 | 6 | Contact Info | Centered, max-w-sm, dark wine-tinted panel with two emails |
 
 **Section comments in `page.tsx` are numbered 1–6 in order.** If you
