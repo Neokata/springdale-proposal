@@ -28,7 +28,7 @@ clock times. Dates are stated as "Oct 2-3, 2026 (dates flexible)."
 3. **Community Activation** — expanded intro (logistics + culture +
    inside/outside park framing), two activation rows (Live Programming,
    Vendors & Food Trucks), lot photo, breakdancing/DJ photos, spec table
-4. **The Ask** — one outer dark card containing: 4a "What Springdale Gets"
+4. **The Proposal** — one outer dark card containing: 4a "What Springdale Gets"
    (red sub-panel, 6 benefits, single column) + 4b "What TougeCon
    Requests" (5 asks) + 4c family-friendly closer (photo + caption)
 5. **TougeCon in Action** — three aftermovies + two press cards

@@ -55,7 +55,7 @@ springdale-proposal/
 | 1 | Who We Are | Dark card, three paragraphs: org framing, brag (15K attendees / 19 states / $750K / annual-vacation attendees), Springdale turnkey pitch with two-parts framing + scaled-down admission |
 | 2 | Curated Drives | Dark card, experience-first intro paragraph (Special Stage sub-event), 2-up checkin + lineup photos, spec table at end (Where / When / Scale / Programming / Our Activation) |
 | 3 | Community Activation | Dark card, expanded intro (logistics + culture + inside/outside park framing), 2 activation rows (Live Programming, Vendors & Food Trucks), lot photo, 2-up breakdancing/DJ photos, spec table at end |
-| 4 | The Ask | One outer dark card containing: 4a **What Springdale Gets** (red sub-panel, 6 benefit bullets, single column) + 4b **What TougeCon Requests** (asks, 5 items) + 4c family-friendly closer (photo + centered caption) |
+| 4 | The Proposal | One outer dark card containing: 4a **What Springdale Gets** (red sub-panel, 6 benefit bullets, single column) + 4b **What TougeCon Requests** (asks, 5 items) + 4c family-friendly closer (photo + centered caption) |
 | 5 | TougeCon in Action | Three YouTube aftermovies + two press cards |
 | 6 | Contact Info | Centered, max-w-sm, dark wine-tinted panel with two emails |
 
@@ -164,7 +164,7 @@ never `console.log`.
   (Curated Drives at a secured lot + Friday-night Community Activation
   at Luther George Park) instead of a single-night activation. New
   structure: Who We Are (combined with The Weekend framing), Special
-  Stage, Community Activation, The Ask (4a + 4b + 4c), Press,
+  Stage, Community Activation, The Proposal (4a + 4b + 4c), Press,
   Contact. Staging schedule softened to "mornings and afternoons" (no
   specific clock times). Dates stated as "Oct 2-3, 2026 (dates flexible)".
   Photo modal added (client component `src/app/Photo.tsx`). Unused photos

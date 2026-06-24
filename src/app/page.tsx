@@ -321,13 +321,13 @@ export default function SpringdaleProposalPage() {
           </div>
         </section>
 
-        {/* 4. The Ask — combines "What Springdale Gets" (red sub-panel),
+        {/* 4. The Proposal — combines "What Springdale Gets" (red sub-panel),
             "What TougeCon Requests" (asks), and the family-friendly closer
             photo into one outer dark card. */}
         <section className="mt-10">
           <div className={`rounded-2xl ${cardBg} p-5 ${cardRing} ${cardShadow} md:p-6`}>
             <h2 className="eyebrow text-slate-400">
-              The Ask
+              The Proposal
             </h2>
 
             {/* 4a. What Springdale Gets — the one red panel, nested as a
