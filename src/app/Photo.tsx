@@ -62,7 +62,7 @@ export function Photo({
         />
       </button>
       {caption ? (
-        <p className="mt-2 text-xs text-slate-400">{caption}</p>
+        <p className="mt-2 text-center text-xs text-slate-400">{caption}</p>
       ) : null}
       {open ? (
         <div

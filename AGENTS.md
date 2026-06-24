@@ -52,12 +52,12 @@ springdale-proposal/
 
 | # | Section | Notes |
 |---|---|---|
-| 1 | Who We Are | Dark card, two paragraphs: org framing + Springdale turnkey pitch |
-| 2 | Special Stage | Dark card, "City-owned parking lot" subtext, 4 staging sessions (Fri + Sat morning/afternoon), 175 cars/session, 2-up checkin + lineup photos |
-| 3 | Community Celebration | Dark card, Luther George Park heading, 3,000-attendee Friday-night proposal, 2 activation rows (Live Programming, Vendors & Restaurants), On Stage 2-up photos + caption |
-| 4 | The Partnership | 4a **What Springdale Gets** (one red panel, 4 benefit bullets) + 4b **What TougeCon Requests** (dark card, 5 asks) + 4c family-friendly closer (photo + caption) |
+| 1 | Who We Are | Dark card, three paragraphs: org framing, brag (15K attendees / 19 states / $750K / annual-vacation attendees), Springdale turnkey pitch with two-parts framing + scaled-down admission |
+| 2 | Curated Drives | Dark card, experience-first intro paragraph (Special Stage sub-event), 2-up checkin + lineup photos, spec table at end (Where / When / Scale / Programming / Our Activation) |
+| 3 | Community Activation | Dark card, expanded intro (logistics + culture + inside/outside park framing), 2 activation rows (Live Programming, Vendors & Food Trucks), lot photo, 2-up breakdancing/DJ photos, spec table at end |
+| 4 | The Ask | One outer dark card containing: 4a **What Springdale Gets** (red sub-panel, 6 benefit bullets, single column) + 4b **What TougeCon Requests** (asks, 5 items) + 4c family-friendly closer (photo + centered caption) |
 | 5 | See It In the Press | Three YouTube aftermovies + two press cards |
-| 6 | Contact Info | Dark wine-tinted panel with two emails |
+| 6 | Contact Info | Centered, max-w-sm, dark wine-tinted panel with two emails |
 
 **Section comments in `page.tsx` are numbered 1–6 in order.** If you
 add/remove/reorder, renumber the comments to match.
@@ -65,13 +65,15 @@ add/remove/reorder, renumber the comments to match.
 ## Design constraints
 
 - **Weekend scope, Friday-night spectacle.** The page pitches a full
-  weekend (Special Stage drives out of a city-owned lot + Friday-night
-  Community Celebration at Luther George Park) but the *public-facing*
+  weekend (Curated Drives out of a secured lot + Friday-night
+  Community Activation at Luther George Park) but the *public-facing*
   Friday-night piece is the visual heart of the proposal. Don't quote
   multi-day aggregate numbers (e.g. weekend totals across all sessions)
   where the city would read them as a Friday-night promise. The
-  staging schedule stays at "Friday and Saturday mornings and afternoons"
-  — no specific times or dates until the city confirms.
+  staging schedule stays at "mornings and afternoons" — no specific
+  clock times (7:30am, 2:00pm). Dates are stated as **"Oct 2-3, 2026
+  (dates flexible)"** so the city can plan while the operator keeps
+  an escape hatch.
 - **One red panel, one near-red panel.** "What Springdale Gets" is
   `#b91c1c`. "Contact Info" is `#171013` (deep wine). Everything else
   is dark surface (`bg-white/5` cards on `#0a0a0a` page). Adding a
@@ -159,14 +161,14 @@ never `console.log`.
 ## Session history (recent)
 
 - **HEAD** — Weekend reframe. Page now pitches a full TougeCon weekend
-  (Special Stage at a city-owned lot + Friday-night Community Celebration
+  (Curated Drives at a secured lot + Friday-night Community Activation
   at Luther George Park) instead of a single-night activation. New
   structure: Who We Are (combined with The Weekend framing), Special
-  Stage, Community Celebration, The Partnership (4a + 4b + 4c), Press,
-  Contact. Staging schedule softened to "Friday and Saturday mornings
-  and afternoons" — no specific times or dates. Photo modal added
-  (client component `src/app/Photo.tsx`). Unused photos removed. WCAG
-  AA audit clean: 0/98.
+  Stage, Community Activation, The Ask (4a + 4b + 4c), Press,
+  Contact. Staging schedule softened to "mornings and afternoons" (no
+  specific clock times). Dates stated as "Oct 2-3, 2026 (dates flexible)".
+  Photo modal added (client component `src/app/Photo.tsx`). Unused photos
+  removed. WCAG AA audit clean: 0/98.
 - **2026-06-23 (`14afb2f`)** — Dropped the "2025 Track Record" section.
   Page now leads straight from "Who We Are" into the 7,500+ footprint.
   Reason: weekend-aggregate numbers (600+ cars, 19 states, $750K) were

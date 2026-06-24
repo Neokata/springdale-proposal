@@ -9,11 +9,23 @@
    section's main heading. Used as the <h2> on most sections. */
 .eyebrow {
   font-family: var(--font-display);
-  font-size: 0.8125rem;     /* 13px */
-  font-weight: 700;
+  font-size: 1.625rem;       /* 26px — twice the previous 13px */
+  font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.08em;
   line-height: 1.2;
+  text-align: center;
+  padding-block: 0.75rem;     /* 12px above + below every header */
+}
+
+/* Subhead modifier — used on <h3> elements nested inside a section
+   (e.g. "What Springdale Gets" / "What TougeCon Requests" under The
+   Partnership). Smaller than the section eyebrow and left-aligned so
+   it reads as a child of the section, not a peer. */
+.subhead {
+  font-size: 0.9375rem;       /* 15px */
+  text-align: left;
+  padding-block: 0;
 }
 
 html {
