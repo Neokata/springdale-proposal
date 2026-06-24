@@ -101,8 +101,8 @@ const benefits = [
   "New out-of-town visitors spending downtown",
   "A flagship fall event for the calendar",
   "Turnkey programming the city doesn't have to produce",
-  "Out-of-region visibility — drivers and attendees discover Springdale",
-  "Logo placement and cross-promotion of Downtown Springdale across TougeCon channels",
+  "Out-of-region visibility — new eyes on Springdale",
+  "Logo placement and Downtown Springdale cross-promotion across TougeCon channels",
   "Media content and photography for city use",
 ];
 
@@ -193,11 +193,13 @@ export default function SpringdaleProposalPage() {
             bring an established format and co-create a Springdale version of
             it — not asking the city to build something from scratch. This
             first year would be a scaled-down version, ramping up in the years
-            ahead as the relationship develops. We prefer to partner with our
-            host cities, working with local law enforcement, government
-            representatives, restaurants, and businesses. This is as much for
-            them as it is for our attendees. We're truly looking for a new
-            partner city to call home.
+            ahead as the relationship develops.
+          </p>
+          <p className="mt-3 text-base leading-relaxed text-slate-100 md:text-lg">
+            We prefer to partner with our host cities, working with local law
+            enforcement, government representatives, restaurants, and
+            businesses — this is as much for them as it is for our attendees.
+            We're truly looking for a new partner city to call home.
           </p>
           <Photo img={photo.cover} className="mt-5 w-full" />
         </section>
@@ -220,29 +222,29 @@ export default function SpringdaleProposalPage() {
               forward to all year — the chance to get out and enjoy their cars
               with like-minded people, on roads that were made for it.
             </p>
-            <div className="mt-4 grid grid-cols-2 gap-3">
+            <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
               <Photo img={photo.checkin} className="h-40 w-full sm:h-52 md:h-60" />
               <Photo img={photo.staging} className="h-40 w-full sm:h-52 md:h-60" />
             </div>
             <dl className="mx-auto mt-8 max-w-lg overflow-hidden rounded-2xl border border-white/10 bg-black/20 text-sm">
-              <div className="grid grid-cols-[110px_1fr] gap-x-4 px-5 py-2.5">
-                <dt className="text-right font-bold text-[#f87171]">Where</dt>
+              <div className="flex flex-col gap-0.5 border-b border-white/5 px-5 py-2.5 last:border-b-0 sm:grid sm:grid-cols-[110px_1fr] sm:gap-x-4 sm:gap-y-0">
+                <dt className="font-bold text-[#f87171] sm:text-right">Where</dt>
                 <dd className="text-slate-100">A reserved parking lot in Springdale that can hold up to 175 cars</dd>
               </div>
-              <div className="grid grid-cols-[110px_1fr] gap-x-4 border-t border-white/5 px-5 py-2.5">
-                <dt className="text-right font-bold text-[#f87171]">When</dt>
+              <div className="flex flex-col gap-0.5 border-b border-white/5 px-5 py-2.5 last:border-b-0 sm:grid sm:grid-cols-[110px_1fr] sm:gap-x-4 sm:gap-y-0">
+                <dt className="font-bold text-[#f87171] sm:text-right">When</dt>
                 <dd className="text-slate-100">Oct 2-3, 2026 · Fri am/pm + Sat am/pm</dd>
               </div>
-              <div className="grid grid-cols-[110px_1fr] gap-x-4 border-t border-white/5 px-5 py-2.5">
-                <dt className="text-right font-bold text-[#f87171]">Scale</dt>
+              <div className="flex flex-col gap-0.5 border-b border-white/5 px-5 py-2.5 last:border-b-0 sm:grid sm:grid-cols-[110px_1fr] sm:gap-x-4 sm:gap-y-0">
+                <dt className="font-bold text-[#f87171] sm:text-right">Scale</dt>
                 <dd className="text-slate-100">4 sessions, up to 175 cars per session</dd>
               </div>
-              <div className="grid grid-cols-[110px_1fr] gap-x-4 border-t border-white/5 px-5 py-2.5">
-                <dt className="text-right font-bold text-[#f87171]">Programming</dt>
+              <div className="flex flex-col gap-0.5 border-b border-white/5 px-5 py-2.5 last:border-b-0 sm:grid sm:grid-cols-[110px_1fr] sm:gap-x-4 sm:gap-y-0">
+                <dt className="font-bold text-[#f87171] sm:text-right">Programming</dt>
                 <dd className="text-slate-100">Staff-led cruises on the best Ozark roads</dd>
               </div>
-              <div className="grid grid-cols-[110px_1fr] gap-x-4 border-t border-white/5 px-5 py-2.5">
-                <dt className="text-right font-bold text-[#f87171]">Our Activation</dt>
+              <div className="flex flex-col gap-0.5 px-5 py-2.5 sm:grid sm:grid-cols-[110px_1fr] sm:gap-x-4 sm:gap-y-0">
+                <dt className="font-bold text-[#f87171] sm:text-right">Our Activation</dt>
                 <dd className="text-slate-100">Branded tents, A-frames, cones</dd>
               </div>
             </dl>
@@ -277,7 +279,7 @@ export default function SpringdaleProposalPage() {
                     <item.icon className="h-5 w-5" strokeWidth={2.25} />
                     <h3 className="font-bold text-slate-100">{item.title}</h3>
                   </div>
-                  <p className="mt-2 text-sm leading-relaxed text-slate-300">
+                  <p className="mt-2 text-[15px] leading-relaxed text-slate-300">
                     {item.desc}
                   </p>
                 </div>
@@ -289,30 +291,30 @@ export default function SpringdaleProposalPage() {
                 stacked on mobile. Photos align to card edges; gap between
                 them matches the vertical spacing above/below. */}
             <div className="mt-6">
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                 <Photo img={photo.handstand} className="h-48 w-full sm:h-60 md:h-72" />
                 <Photo img={photo.dj} className="h-48 w-full sm:h-60 md:h-72" />
               </div>
             </div>
             <dl className="mx-auto mt-8 max-w-lg overflow-hidden rounded-2xl border border-white/10 bg-black/20 text-sm">
-              <div className="grid grid-cols-[110px_1fr] gap-x-4 px-5 py-2.5">
-                <dt className="text-right font-bold text-[#f87171]">Where</dt>
+              <div className="flex flex-col gap-0.5 border-b border-white/5 px-5 py-2.5 last:border-b-0 sm:grid sm:grid-cols-[110px_1fr] sm:gap-x-4 sm:gap-y-0">
+                <dt className="font-bold text-[#f87171] sm:text-right">Where</dt>
                 <dd className="text-slate-100">Luther George Park + surrounding parking lots</dd>
               </div>
-              <div className="grid grid-cols-[110px_1fr] gap-x-4 border-t border-white/5 px-5 py-2.5">
-                <dt className="text-right font-bold text-[#f87171]">When</dt>
+              <div className="flex flex-col gap-0.5 border-b border-white/5 px-5 py-2.5 last:border-b-0 sm:grid sm:grid-cols-[110px_1fr] sm:gap-x-4 sm:gap-y-0">
+                <dt className="font-bold text-[#f87171] sm:text-right">When</dt>
                 <dd className="text-slate-100">Oct 3, 2026 · Friday night</dd>
               </div>
-              <div className="grid grid-cols-[110px_1fr] gap-x-4 border-t border-white/5 px-5 py-2.5">
-                <dt className="text-right font-bold text-[#f87171]">Scale</dt>
+              <div className="flex flex-col gap-0.5 border-b border-white/5 px-5 py-2.5 last:border-b-0 sm:grid sm:grid-cols-[110px_1fr] sm:gap-x-4 sm:gap-y-0">
+                <dt className="font-bold text-[#f87171] sm:text-right">Scale</dt>
                 <dd className="text-slate-100">~3,000 attendees (working planning number)</dd>
               </div>
-              <div className="grid grid-cols-[110px_1fr] gap-x-4 border-t border-white/5 px-5 py-2.5">
-                <dt className="text-right font-bold text-[#f87171]">Programming</dt>
+              <div className="flex flex-col gap-0.5 border-b border-white/5 px-5 py-2.5 last:border-b-0 sm:grid sm:grid-cols-[110px_1fr] sm:gap-x-4 sm:gap-y-0">
+                <dt className="font-bold text-[#f87171] sm:text-right">Programming</dt>
                 <dd className="text-slate-100">Live DJ, breakdancing battles, custom stage lighting</dd>
               </div>
-              <div className="grid grid-cols-[110px_1fr] gap-x-4 border-t border-white/5 px-5 py-2.5">
-                <dt className="text-right font-bold text-[#f87171]">Our Activation</dt>
+              <div className="flex flex-col gap-0.5 px-5 py-2.5 sm:grid sm:grid-cols-[110px_1fr] sm:gap-x-4 sm:gap-y-0">
+                <dt className="font-bold text-[#f87171] sm:text-right">Our Activation</dt>
                 <dd className="text-slate-100">Curated car display, vendors, food trucks</dd>
               </div>
             </dl>
@@ -424,6 +426,7 @@ export default function SpringdaleProposalPage() {
                   href={item.url}
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label={`${item.title} — ${item.subtitle} (opens in new tab)`}
                   className={`flex items-center justify-between gap-4 rounded-2xl ${cardBg} px-4 py-2.5 ${cardRing} ${cardShadow} ${hoverLift}`}
                 >
                   <div className="flex items-center gap-3">
